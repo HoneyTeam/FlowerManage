@@ -3,7 +3,7 @@ class Login extends Component {
     render(){
         return (
             <div>
-                这里是用户界面
+                这里是用户列表
             </div>
         )
     }

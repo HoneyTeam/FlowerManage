@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
 import  './index.less'
-import LeftNav from '../../components/leftNav'
+import LeftNav from 'components/leftNav'
 class Admin extends Component{
   render(){
     return(

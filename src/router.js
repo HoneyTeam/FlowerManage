@@ -1,9 +1,11 @@
 import React,{Component} from 'react'
 import {HashRouter,Route,Redirect,Switch} from 'react-router-dom'
 import  App from  './App'
-import Login  from  './pages/login'
-import User from  './pages/user'
-import Admin from './pages/admin'
+import Login  from  'pages/login'
+
+import Admin from 'pages/admin'
+import UserAdd from 'pages/User/UserAdd'
+import UserList from 'pages/User/UserList'
 class RootRouter extends Component{
     render(){
         return (
@@ -11,11 +13,13 @@ class RootRouter extends Component{
                 <HashRouter>
                 <Switch>
                     <Redirect exact from='/' to='/admin'></Redirect> 
+                    <Route path='/login' component={Login}></Route>
                     <Route path = '/admin' render={()=>{
                     return(
                     <Admin>
-                        <Route path='/login' component={Login}></Route>
-                        <Route exact path='/user' component={User}></Route>                  
+                        
+                        <Route exact path='/admin/user/add' component={UserAdd}></Route>    
+                        <Route exact path='/admin/user/list' component={UserList}></Route>              
                     </Admin>
                     )
                 }
