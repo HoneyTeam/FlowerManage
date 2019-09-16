@@ -3,18 +3,24 @@ import {HashRouter,Route,Redirect,Switch} from 'react-router-dom'
 import  App from  './App'
 import Login  from  './pages/login'
 import User from  './pages/user'
+import Admin from './pages/admin'
 class RootRouter extends Component{
     render(){
         return (
             <App>
                 <HashRouter>
-
                 <Switch>
-                    <Redirect exact from='/' to='/login'></Redirect> 
-                    <Route path='/login' component={Login}></Route>
-                    <Route exact path='/user' component={User}></Route>
-              </Switch>
-                    
+                    <Redirect exact from='/' to='/admin'></Redirect> 
+                    <Route path = '/admin' render={()=>{
+                    return(
+                    <Admin>
+                        <Route path='/login' component={Login}></Route>
+                        <Route exact path='/user' component={User}></Route>                  
+                    </Admin>
+                    )
+                }
+                }></Route>                   
+                </Switch>                   
                 </HashRouter>
             </App>
         )
