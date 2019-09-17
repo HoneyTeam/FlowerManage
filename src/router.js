@@ -12,6 +12,7 @@ class RootRouter extends Component{
                 <Switch>
                     <Redirect exact from='/' to='/login'></Redirect> 
                     <Route path='/login' component={Login}></Route>
+                    <div>1111</div>
                     <Route exact path='/user' component={User}></Route>
               </Switch>
                     
