@@ -2,6 +2,7 @@ import React,{Component} from 'react'
 import { Menu, Icon } from 'antd';
 import   {withRouter}from 'react-router-dom'
 import  navData from  './navData'
+import './index.less'
 
 const { SubMenu } = Menu;
 class LeftNav extends Component{
@@ -48,8 +49,8 @@ class LeftNav extends Component{
   }
   render(){
     return(
-      <Menu  theme='dark'  mode="vertical">
-            {this.renderItem(this.state.data)}        
+      <Menu className='leftmenu' mode="vertical">
+            {this.renderItem(this.state.data)}
       </Menu>
     )
   }

@@ -43,10 +43,14 @@ class OrderList extends Component{
             width:150,
         },
         {
-            title:'图片',
-            dataIndex:'img',
-            key:'img',
-            width:150,
+            title: '图片',
+            dataIndex: 'img',
+            key: 'img',
+            width:200,
+            render(data){
+                let url='http://10.9.22.239:8080'
+                return (<img width='80' height='80' src={url+=data}/>)
+            }
         },
         {
             title:'数量',

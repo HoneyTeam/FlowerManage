@@ -14,7 +14,7 @@ class Request extends Component{
     componentDidMount(){
         console.log('哈哈',this.props.request)
             if(this.props.request){
-                //this.time()
+                this.time()
             }
             
     }
@@ -37,6 +37,7 @@ class Request extends Component{
                     if(token!=this.state.oldtoken){
                         //clearInterval()
                         //this.props.changeModelState()
+                        clearInterval(times)
                         this.setState()
                         message.success('此账户在别处登录了')
                         this.props.history.push('/login')  

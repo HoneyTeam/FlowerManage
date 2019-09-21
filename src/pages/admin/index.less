@@ -3,26 +3,34 @@
   height: 100vh;
   .admin-left{
     width: 200px;
-    background: red;
+    background: rgb(247, 216, 221);
+
     height: 100vh;
+    img{
+      width: 200px;
+      height: 100px;
+    }
   }
   .admin-right{
-    flex: 1;
-    background: blue;
+    flex: 1;  
     height: 100vh;
     display: flex;
     flex-direction: column;
     .admin-right-top{
+      background: rgb(247, 189, 199);
       width: 100%;
-      height: 100px;
+      height: 100px;      
+      span{
+        display: block;
+        font-size: 30px;
+        font-weight: 500;
+        margin-left: 20px;
+        margin-top: 20px;
+      }
     }
     .admin-right-center{
       background: #fff;
       flex:1;
-    }
-    .admin-right-footer{
-      width: 100%;
-      height: 100px;
     }
   }
 }

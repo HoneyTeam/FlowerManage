@@ -9,7 +9,7 @@ class Allorder extends Component{
             filteredInfo: null,
             sortedInfo: null,
             info:[],
-            loding:false//数据加载动画
+            loading:false//数据加载动画
           };
         
     }
@@ -205,13 +205,13 @@ class Allorder extends Component{
 
         render() {
             // this.setState(info)
-            let { sortedInfo, filteredInfo,info,loding} = this.state;
+            let { sortedInfo, filteredInfo,info,loading} = this.state;
             sortedInfo = sortedInfo || {};
             filteredInfo = filteredInfo || {};
             return (
 
             <Card className="orderlist">
-                <Spin tip='数据加载中' spinning={loding}>
+                <Spin tip='数据加载中' spinning={loading}>
                     <Table className="table" columns={this.columns} dataSource={info} scroll={{y:450,x:1750}}/>
                 </Spin>
             </Card>

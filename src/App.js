@@ -1,5 +1,4 @@
 import React from 'react';
-
 function App(props) {	
 	return (
 		<div className="App">
@@ -8,6 +7,5 @@ function App(props) {
 		</div>
 	);
 	}
-
 export default App;
 

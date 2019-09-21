@@ -10,40 +10,40 @@ let obj={
   {
     name:'banner管理',
     key:'1',
-    path:'/admin/food/',
-    type:'home',
+    path:'/admin/banner/',
+    type:'crown',
     children:[
       {
         name:'banner列表',
-        path:'/admin/food/list',
+        path:'/admin/banner/list',
         key:'1-0',
-        type:'home',
+        type:'container',
       },
       {
         name:'banner添加',
-        path:'/admin/food/add',
+        path:'/admin/banner/add',
         key:'1-1',
-        type:'home',
+        type:'folder-add',
       },
     ]
   },
   {
     name:'商品管理',
     key:'2',
-    path:'/admin/food/',
-    type:'home',
+    path:'/admin/goods/',
+    type:'shop',
     children:[
       {
         name:'商品列表',
-        path:'/admin/food/list',
+        path:'/admin/goods/goodlist',
         key:'2-0',
-        type:'home',
+        type:'number',
       },
       {
         name:'商品添加',
-        path:'/admin/food/add',
+        path:'/admin/goods/goodadd',
         key:'2-1',
-        type:'home',
+        type:'inbox',
       },
     ]
   },
@@ -51,13 +51,13 @@ let obj={
     name:'用户管理',
     key:'3',
     path:'/admin/food/',
-    type:'home',
+    type:'user',
     children:[
       {
         name:'用户列表',
         path:'/admin/user/list',
         key:'3-0',
-        type:'home',
+        type:'menu',
       },
       {
         name:'用户添加',
@@ -71,13 +71,13 @@ let obj={
     name:'订单管理',
     key:'4',
     path:'/admin/order/',
-    type:'home',
+    type:'dollar',
     children:[
       {
         name:'订单列表',
         path:'/admin/order/list',
         key:'4-0',
-        type:'home',
+        type:'block',
       }
     ]
   },
@@ -85,13 +85,13 @@ let obj={
     name:'后台人员管理',
     key:'5',
     path:'/admin/staff/',
-    type:'home',
+    type:'lock',
     children:[
       {
         name:'人员列表',
         path:'/admin/staff/list',
         key:'5-0',
-        type:'home',
+        type:'smile',
       }
     ]
   },
