@@ -3,22 +3,27 @@ let obj={
   data: [{
     name:'首页',
     key:'0',
-    path:'/admin/home'
+    path:'/admin/home',
+    type:'home'
   },
+  
   {
     name:'banner管理',
     key:'1',
     path:'/admin/food/',
+    type:'home',
     children:[
       {
         name:'banner列表',
         path:'/admin/food/list',
-        key:'1-0'
+        key:'1-0',
+        type:'home',
       },
       {
         name:'banner添加',
         path:'/admin/food/add',
-        key:'1-1'
+        key:'1-1',
+        type:'home',
       },
     ]
   },
@@ -26,16 +31,19 @@ let obj={
     name:'商品管理',
     key:'2',
     path:'/admin/food/',
+    type:'home',
     children:[
       {
         name:'商品列表',
         path:'/admin/food/list',
-        key:'2-0'
+        key:'2-0',
+        type:'home',
       },
       {
         name:'商品添加',
         path:'/admin/food/add',
-        key:'2-1'
+        key:'2-1',
+        type:'home',
       },
     ]
   },
@@ -43,20 +51,50 @@ let obj={
     name:'用户管理',
     key:'3',
     path:'/admin/food/',
+    type:'home',
     children:[
       {
         name:'用户列表',
-        path:'/admin/food/list',
-        key:'3-0'
+        path:'/admin/user/list',
+        key:'3-0',
+        type:'home',
       },
       {
         name:'用户添加',
-        path:'/admin/food/add',
-        key:'3-1'
+        path:'/admin/user/add',
+        key:'3-1',
+        type:'home',
       },
     ]
   },
- 
+  {
+    name:'订单管理',
+    key:'4',
+    path:'/admin/order/',
+    type:'home',
+    children:[
+      {
+        name:'订单列表',
+        path:'/admin/order/list',
+        key:'4-0',
+        type:'home',
+      }
+    ]
+  },
+  {
+    name:'后台人员管理',
+    key:'5',
+    path:'/admin/staff/',
+    type:'home',
+    children:[
+      {
+        name:'人员列表',
+        path:'/admin/staff/list',
+        key:'5-0',
+        type:'home',
+      }
+    ]
+  },
   ]
 }
 export default obj

@@ -1,5 +1,5 @@
 import React,{Component} from 'react'
-import {Menu} from 'antd'
+import { Menu, Icon } from 'antd';
 import   {withRouter}from 'react-router-dom'
 import  navData from  './navData'
 
@@ -24,16 +24,24 @@ class LeftNav extends Component{
     return arr.map((item)=>{
        if(item.children){
          return(
-           <SubMenu title={item.name}>
+			<SubMenu key={item.key} title={
+				<span>
+				<Icon type={item.type} />
+				<span>{item.name}</span>
+				</span>
+			 } >
              {/* 渲染item的时候需要根据1级还是二级进行递归 */}
              {this.renderItem(item.children)}
            </SubMenu>
          )
        }else{
          return (
-          <Menu.Item key={item.key}
-                     onClick={this.jump.bind(this,item.path)}
-          >{item.name}</Menu.Item>
+          <Menu.Item key={item.key} onClick={this.jump.bind(this,item.path)}>
+            <span>
+                <Icon type={item.type} />
+                <span>{item.name}</span>
+            </span>
+          </Menu.Item>
          )
        }
     })
@@ -41,9 +49,7 @@ class LeftNav extends Component{
   render(){
     return(
       <Menu  theme='dark'  mode="vertical">
-            {this.renderItem(this.state.data)}
-    
-        
+            {this.renderItem(this.state.data)}        
       </Menu>
     )
   }
