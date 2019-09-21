@@ -6,6 +6,10 @@ import Login  from  'pages/login'
 import Admin from 'pages/admin'
 import UserAdd from 'pages/User/UserAdd'
 import UserList from 'pages/User/UserList'
+
+import GoodList from 'pages/Goods/GoodList'
+import GoodAdd from 'pages/Goods/GoodAdd'
+import GoodXqList from 'pages/Goods/GoodXqList'
 class RootRouter extends Component{
     render(){
         return (
@@ -16,10 +20,12 @@ class RootRouter extends Component{
                     <Route path='/login' component={Login}></Route>
                     <Route path = '/admin' render={()=>{
                     return(
-                    <Admin>
-                        
+                    <Admin>                    
                         <Route exact path='/admin/user/add' component={UserAdd}></Route>    
-                        <Route exact path='/admin/user/list' component={UserList}></Route>              
+                        <Route exact path='/admin/user/list' component={UserList}></Route> 
+                        <Route exact path='/admin/goods/goodlist' component={GoodList}></Route>
+                        <Route exact path='/admin/goods/goodadd' component={GoodAdd}></Route> 
+                        <Route path='/admin/goods/goodxqlist/' component={GoodXqList}></Route>             
                     </Admin>
                     )
                 }

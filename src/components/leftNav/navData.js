@@ -8,7 +8,7 @@ let obj={
   {
     name:'banner管理',
     key:'1',
-    path:'/admin/food/',
+    path:'/admin/banner/',
     children:[
       {
         name:'banner列表',
@@ -25,16 +25,16 @@ let obj={
   {
     name:'商品管理',
     key:'2',
-    path:'/admin/food/',
+    path:'/admin/goods/',
     children:[
       {
         name:'商品列表',
-        path:'/admin/food/list',
+        path:'/admin/goods/goodlist',
         key:'2-0'
       },
       {
         name:'商品添加',
-        path:'/admin/food/add',
+        path:'/admin/goods/goodadd',
         key:'2-1'
       },
     ]
@@ -42,16 +42,16 @@ let obj={
   {
     name:'用户管理',
     key:'3',
-    path:'/admin/food/',
+    path:'/admin/user/',
     children:[
       {
         name:'用户列表',
-        path:'/admin/food/list',
+        path:'/admin/user/list',
         key:'3-0'
       },
       {
         name:'用户添加',
-        path:'/admin/food/add',
+        path:'/admin/user/add',
         key:'3-1'
       },
     ]
