@@ -13,6 +13,7 @@ class GoodList extends Component{
             goodXq:false,
             record:{},
             loading:false,//加载动画
+
             // input:'搜索关键字'
         }
     }
