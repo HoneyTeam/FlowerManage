@@ -110,17 +110,20 @@ class GoodXq extends Component{
         console.log("详情列表",this.props.record2.list)
         let {list,xqAdd,id} = this.state
         return(
-        <Card className='xq'>
-        {!xqAdd||<GoodXqAdd info={id} back={this.dismiss} updatexq={this.updatexq}></GoodXqAdd>}
-        <Button className='btn' onClick={this.close}>返回</Button>
-        <Button className='btn' onClick={this.add}>添加商品</Button>
-         <Table dataSource={list} 
-                // className='test'
-                columns={this.columns} 
-                scroll={{x:1100 ,y:600}}
-                pagination={false}
-         />   
-       </Card>
+          <div className='xqlist'>
+            <Card className='xqcard'>
+              {!xqAdd||<GoodXqAdd info={id} back={this.dismiss} updatexq={this.updatexq}></GoodXqAdd>}
+              <Button className='btn' onClick={this.close}>返回</Button>
+              <Button className='btn' onClick={this.add}>添加商品</Button>
+              <Table dataSource={list} 
+                      // className='test'
+                      columns={this.columns} 
+                      scroll={{x:1100 ,y:600}}
+                      pagination={false}
+              />   
+          </Card>
+          </div>
+        
             
         )   
         }     

@@ -12,12 +12,12 @@ let obj={
     children:[
       {
         name:'banner列表',
-        path:'/admin/food/list',
+        path:'/admin/banner/list',
         key:'1-0'
       },
       {
         name:'banner添加',
-        path:'/admin/food/add',
+        path:'/admin/banner/add',
         key:'1-1'
       },
     ]

@@ -55,3 +55,4 @@ class GoodAdd extends Component{
     }
 }
 export default GoodAdd
+
