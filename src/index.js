@@ -1,16 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Router  from './router'
-//index.js文件
-// import Store from './react-redux-store/store'
-// import {Provider} from 'react-redux' //Provider将state注册到根组件，
-//让根组件下的所有的组件直接获取到store对象
+
+import RootRouter  from './router';
 import * as serviceWorker from './serviceWorker';
+//引入 antd的全局样式
+import "antd/dist/antd.css";
 
-ReactDOM.render( <Router />
+import axios from "utils/axios.js"
+
+React.Component.prototype.$axios=axios
+
+ReactDOM.render( <RootRouter>你好</RootRouter>
     ,document.getElementById('root'));
-
-
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
