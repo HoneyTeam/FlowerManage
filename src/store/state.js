@@ -1,4 +1,5 @@
-export default{
+export default {
     modelState:false,
-    request:true
-}
+    num:1,
+    request:false
+  }

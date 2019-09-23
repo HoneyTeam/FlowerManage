@@ -3,7 +3,8 @@ import React,{Component} from 'react'
 import {Form,Icon,Input,Button,Card,message} from 'antd'
 import ReconnectingWebSocket from "reconnecting-websocket";
 // import { subscribeToTimer } from '../../api/subscribeToTimer';
-
+import Store from 'store/store'
+import ActionCreator from 'store/actionCreator'
 import './index.less'
 class Login extends Component {
     constructor(){
@@ -17,13 +18,14 @@ class Login extends Component {
     }
     login=()=>{
         console.log('a')
+        
         this.props.form.validateFields((err,data)=>{
             console.log('aaaaaa',err,data)
-
+            console.log('查看props权限',this.props)
             if(err){
                 message.error('输入信息有误请重试')
             }else{
-                this.$axios.get(`/hehe/admin/user/login?us=${data.us}&ps=${data.ps}`)
+                this.$axios.get(`/hehe/admin/user/login?us=${data.us}&ps=${data.ps}`)  //通过姓名和密码查询数据库里是否有这个用户
                 .then((data)=>{
                      console.log(data.data)
                     if(data.data.err==0){
@@ -35,7 +37,7 @@ class Login extends Component {
                         console.log("用户名",this.state.us,this.state.id)
                         let _id=data.data.list[0]._id
                         //console.log(_id)
-                        this.$axios.get(`/hehe/admin/user/loginadd?_id=${_id}`)
+                        this.$axios.get(`/hehe/admin/user/loginadd?_id=${_id}`) //如果有这个用户,就向这个用户添加token
                         .then((data)=>{
                             //console.log(data)
                             if(data.data.err==0){  
@@ -54,6 +56,11 @@ class Login extends Component {
                 })
             }
         })
+    }
+    componentDidUpdate(){
+        // localStorage.setItem('request','false') 
+        Store.dispatch(ActionCreator.changeRequest1())
+        // console.log("opop",this.props.request)
     }
     render(){
         const{getFieldDecorator} =this.props.form;

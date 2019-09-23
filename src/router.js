@@ -14,6 +14,7 @@ import Allorder from 'pages/Order/Allorders'
 import GoodList from 'pages/Goods/GoodList'
 import GoodAdd from 'pages/Goods/GoodAdd'
 import GoodXqList from 'pages/Goods/GoodXqList'
+import Administration from 'pages/admin/administration'
 class RootRouter extends Component{
     render(){
         return (
@@ -37,6 +38,7 @@ class RootRouter extends Component{
                         <Route path='/admin/goods/goodxqlist/' component={GoodXqList}></Route>             
                         <Route exact path='/admin/banner/list' component={Banner}></Route> 
                         <Route exact path='/admin/banner/add' component={BannerAdd}></Route>
+                        <Route exact path='/admin/staff/list' component={Administration}></Route>
                     </Admin>
                     )
                 }

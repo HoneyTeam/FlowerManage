@@ -4,30 +4,49 @@ import {connect} from 'react-redux'
 import ActionCreator from 'store/actionCreator'
 import {withRouter} from 'react-router-dom'
 import {bindActionCreators} from 'redux'  //将方法直接映射到props里面去
+import Store from 'store/store'
 class Request extends Component{
       constructor (){
         super()
         this.state={
-        oldtoken:''
+        oldtoken:'',
+        andstate:''
         }
     }
-    componentDidMount(){
-        console.log('哈哈',this.props.request)
+    // componentDidMount(){
+    //     console.log('哈哈',this.props.request)
+    //     Store.dispatch(ActionCreator.changeRequest())
+    // }
+    componentDidUpdate(){
+        Store.dispatch(ActionCreator.changeRequest())
+        console.log('嘻嘻嘻',this.props.request)
+        //console.log('哈哈',this.props.request)
+        //console.log('输出Stroe1', Store.dispatch(ActionCreator.changeModelState()))
+        //console.log('输出Stroe', Store.dispatch(ActionCreator.changeRequest()))
+        //Store.dispatch(ActionCreator.changeRequest())
+        // this.setState({andstate:this.props.request})
+        // console.log('hehe',this.state.andstate)
+        // console.log('嘻嘻嘻',this.props.request)
+        //localStorage.setItem('request','true') 
+    //     let request=localStorage.getItem('request')
             if(this.props.request){
+                console.log('111111111111111111111111')
                 this.time()
+                console.log(this.props.request)
+            }else{
+
             }
-            
     }
-    componentWillUnmount(){
-        console.log('我要死了')
-    }
+    //componentWillUnmount(){
+    //     console.log('我要死了')
+     //}
 
     time=()=>{
         let times=setInterval(()=>{
             let {oldtoken}=this.state
             let token=localStorage.getItem('token')
             let _id=localStorage.getItem('id')
-            console.log(token,_id)
+            //console.log(token,_id)
                 this.$axios.get(`/hehe/admin/findus/finduser?_id=${_id}`)
                 .then((data)=>{
                 console.log('请求回来的数据',data)
@@ -41,11 +60,12 @@ class Request extends Component{
                         this.setState()
                         message.success('此账户在别处登录了')
                         this.props.history.push('/login')  
-                        clearInterval(times)
+                       window.location.reload()
+                        //clearInterval(times)
                     }
                 }
                 })
-            },1000)
+            },3000)
         }
         // clear=()=>{
         //     console.log('aaaaaaaaaaaaa')
@@ -100,7 +120,6 @@ class Request extends Component{
         //     })
         // }
         render(){
-            
             return (
                 <div>
 

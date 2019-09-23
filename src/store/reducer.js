@@ -1,13 +1,19 @@
 import State from './state'
 export default (preState=State,action)=>{
     let newData=JSON.parse(JSON.stringify(preState))
-    let {type,params}=action
-    switch (type){
-        case 'CHANGE_MODELSTATE'://控制模态框的显示
+    console.log('数据数据数据数据',newData)
+    let {type} = action
+    switch (type) {
+        case 'CHANGE_MODELSTATE':
             newData.modelState=!newData.modelState
             break;
-        case 'CHANGE_REQUEST'://控制定时器的显示
-            newData.request=!newData.request
+        case 'CHANGE_REQUEST':
+            newData.request=true
+            console.log('aaaaaaaaaaaaaaaaa',newData.request)
+            break;
+        case 'CHANGE_REQUEST1':
+            newData.request=false
+            console.log('aaaaaaaaaaaaaaaaa',newData.request)
             break;
         default:
             break;
